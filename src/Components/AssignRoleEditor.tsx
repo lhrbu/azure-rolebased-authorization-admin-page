@@ -94,7 +94,7 @@ const AssignRoleEditor:React.FC<{OnSubmit?:(payload:AssignRolePayload)=>void}>=
         try{
         setLoading(true)
         setUserIds([...await UsersAdminWebAPI.GetUserId()])
-        setRoles([...await RolesWebAPI.Get()])
+        setRoles([...await RolesWebAPI.GetAll()])
         setDomains([...await DomainWebAPI.GetAll()])
         }catch(err){message.error((err as any).message,2)}
         finally{setLoading(false)}
